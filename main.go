@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/codegangsta/negroni"
-	"github.com/gorilla/mux"
+	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/codegangsta/negroni"
+	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/gorilla/mux"
 	"github.com/wawandco/gontact/handlers"
 )
 

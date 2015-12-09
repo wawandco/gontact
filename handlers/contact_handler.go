@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"os"
 
-	validator "github.com/asaskevich/govalidator"
-	"github.com/gorilla/schema"
+	validator "github.com/wawandco/gontact/Godeps/_workspace/src/github.com/asaskevich/govalidator"
+	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/gorilla/schema"
 	"github.com/wawandco/gontact/core"
 	"github.com/wawandco/gontact/providers"
 )
