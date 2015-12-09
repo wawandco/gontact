@@ -1,6 +1,6 @@
 ## GOntact
 
-GOntact is a simple service to send contact form data by email, its propose is to provide a simple service that could be used by any website against multiple transactional email services such as Mandril, MailGun, and SendGrid.
+GOntact is a simple service to send contact form data by email, its propose is to provide a simple service that could be used by any website against Slack or multiple transactional email services such as Mandril, MailGun, and SendGrid.
 
 GOntact provides a simple POST endpoint `/contact`, where it expects to receive the following parameters, that will be sent to your `GONTACT_EMAIL`.
 
@@ -23,6 +23,7 @@ GOntact is secured by a environment variable `GONTACT_TOKEN` that should be pass
 
 GOntact built in providers:
 
+- Slack
 - Mandril
 - SendGrid (comming soon)
 - MailGun (comming soon)
