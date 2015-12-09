@@ -12,7 +12,7 @@ func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/contact", handlers.ContactHandler).Methods("POST")
 
-	//Middlewares add validation logic, could be with JWT or token authentication ?
+	//TODO: Middlewares add validation logic, could be with JWT or token authentication ?
 	n := negroni.Classic()
 	n.UseHandler(router)
 	n.Run(":" + serverPort())

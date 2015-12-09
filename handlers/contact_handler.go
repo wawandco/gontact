@@ -1,12 +1,44 @@
 package handlers
 
-import "net/http"
+import (
+	"net/http"
+	"os"
+
+	validator "github.com/asaskevich/govalidator"
+	"github.com/gorilla/schema"
+	"github.com/wawandco/gontact/core"
+	"github.com/wawandco/gontact/providers"
+)
+
+var registeredProviders = map[string]providers.Provider{
+	"INTERNAL": providers.InternalProvider{},
+	"ERROR":    providers.ErrorProvider{},
+}
 
 //ContactHandler handles requests done to our /contact endpoint and pass our authentication method.
-func ContactHandler(http.ResponseWriter, *http.Request) {
-	//1. Validate the request
-	//2. Respond 422 if not complete
-	//3. Process if complete
-	//4. Respond with 201 if provider responds OK
-	//5. Respond with 500 is profider responds with error
+func ContactHandler(rw http.ResponseWriter, req *http.Request) {
+
+	contact := core.Contact{}
+	decoder := schema.NewDecoder()
+	decoder.Decode(&contact, req.Form)
+
+	_, err := validator.ValidateStruct(contact)
+	if err != nil {
+		rw.WriteHeader(422)
+		rw.Write([]byte(err.Error()))
+	}
+
+	providerName := os.Getenv("GONTACT_PROVIDER")
+	provider := registeredProviders[providerName]
+
+	if provider != nil {
+		_, err = provider.SendContact(contact)
+
+		if err != nil {
+			rw.WriteHeader(500)
+			return
+		}
+	}
+
+	rw.WriteHeader(201)
 }
