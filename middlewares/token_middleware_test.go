@@ -10,6 +10,7 @@ import (
 )
 
 func TestTokenBlank(t *testing.T) {
+	myvar = 0
 	rw := httptest.NewRecorder()
 	req, _ := http.NewRequest("POST", "/contact", nil)
 	TokenMiddleware(rw, req, afterMiddlewareFunc)
@@ -17,19 +18,21 @@ func TestTokenBlank(t *testing.T) {
 }
 
 func TestTokenInvalid(t *testing.T) {
+	myvar = 0
 	rw := httptest.NewRecorder()
 	req, _ := http.NewRequest("POST", "/contact", nil)
 	os.Setenv("GONTACT_TOKEN", "AAB")
-	req.Header["X-GONTACT-TOKEN"] = []string{"AAA"}
+	req.Header["X-Gontact-Token"] = []string{"AAA"}
 	TokenMiddleware(rw, req, afterMiddlewareFunc)
 	assert.Equal(t, myvar, 0)
 }
 
 func TestTokenValid(t *testing.T) {
+	myvar = 0
 	rw := httptest.NewRecorder()
 	req, _ := http.NewRequest("POST", "/contact", nil)
 	os.Setenv("GONTACT_TOKEN", "AAB")
-	req.Header["X-GONTACT-TOKEN"] = []string{"AAB"}
+	req.Header["X-Gontact-Token"] = []string{"AAB"}
 	TokenMiddleware(rw, req, afterMiddlewareFunc)
 	assert.Equal(t, myvar, 100)
 }
