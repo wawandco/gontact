@@ -40,7 +40,7 @@ func (sp SlackProvider) SendContact(contact core.Contact) (string, error) {
 		defer response.Body.Close()
 		contents, _ := ioutil.ReadAll(response.Body)
 
-		return "Error", errors.New(string(contents))
+		return "Error", errors.New("Slack Error: " + string(contents))
 	}
 
 	return "OK", nil
