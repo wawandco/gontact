@@ -15,7 +15,7 @@ GOntact returns `422` if required parameters are not being passed, otherwise it 
 
 ### Security
 
-GOntact is secured by a environment variable `GONTACT_TOKEN` that should be passed on the request's `X-GONTACT-TOKEN` header.
+GOntact is secured by a environment variable `GONTACT_TOKEN` that should be passed on the request's `X-Gontact-Token` header.
 
 [TODO: JWT]
 
