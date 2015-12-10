@@ -14,8 +14,8 @@ func main() {
 	router.HandleFunc("/contact", handlers.ContactHandler).Methods("POST")
 
 	n := negroni.Classic()
-	n.Use(negroni.HandlerFunc(middlewares.TokenMiddleware))
 	n.Use(negroni.HandlerFunc(middlewares.CORSMiddleware))
+	n.Use(negroni.HandlerFunc(middlewares.TokenMiddleware))
 	n.UseHandler(router)
 	n.Run(":" + serverPort())
 }
