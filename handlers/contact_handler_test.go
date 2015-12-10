@@ -18,7 +18,7 @@ func TestContactValidationFailed(t *testing.T) {
 	}
 
 	request, _ := http.NewRequest("POST", "/contact", nil)
-	request.Form = params
+	request.PostForm = params
 	response := httptest.NewRecorder()
 
 	ContactHandler(response, request)
@@ -32,7 +32,7 @@ func TestContactValidationSucceeed(t *testing.T) {
 	params.Add("Message", "Hey, Hello from here!")
 
 	request, _ := http.NewRequest("POST", "/contact", nil)
-	request.Form = params
+	request.PostForm = params
 	response := httptest.NewRecorder()
 	ContactHandler(response, request)
 
@@ -49,7 +49,7 @@ func TestCallsCorrectProvider(t *testing.T) {
 
 	os.Setenv("GONTACT_PROVIDER", "INTERNAL")
 	request, _ := http.NewRequest("POST", "/contact", nil)
-	request.Form = params
+	request.PostForm = params
 
 	response := httptest.NewRecorder()
 	ContactHandler(response, request)
@@ -68,7 +68,7 @@ func TestCallsCorrectProviderAndReturnsError(t *testing.T) {
 
 	os.Setenv("GONTACT_PROVIDER", "ERROR")
 	request, _ := http.NewRequest("POST", "/contact", nil)
-	request.Form = params
+	request.PostForm = params
 
 	response := httptest.NewRecorder()
 	ContactHandler(response, request)
