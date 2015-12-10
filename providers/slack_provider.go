@@ -3,6 +3,7 @@ package providers
 import (
 	"bytes"
 	"errors"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"text/template"
@@ -35,7 +36,11 @@ func (sp SlackProvider) SendContact(contact core.Contact) (string, error) {
 	if err != nil {
 		return "", err
 	} else if response.StatusCode == 500 {
-		return "Error", errors.New("Server error")
+
+		defer response.Body.Close()
+		contents, _ := ioutil.ReadAll(response.Body)
+
+		return "Error", errors.New(string(contents))
 	}
 
 	return "OK", nil
