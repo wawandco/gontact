@@ -8,7 +8,7 @@ import (
 //TokenMiddleware is used to secure our Gontact endpoint by comparing `X-GONTACT-TOKEN`
 //with GONTACT_TOKEN environment variable.
 func TokenMiddleware(rw http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
-	header := r.Header["X-GONTACT-TOKEN"]
+	header := r.Header["X-Gontact-Token"]
 	token := os.Getenv("GONTACT_TOKEN")
 	cont := true
 
