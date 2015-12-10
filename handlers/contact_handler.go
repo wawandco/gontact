@@ -35,6 +35,7 @@ func ContactHandler(rw http.ResponseWriter, req *http.Request) {
 
 		if err != nil {
 			rw.WriteHeader(500)
+			rw.Write([]byte(err.Error()))
 			return
 		}
 	}
