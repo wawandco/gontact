@@ -9,7 +9,7 @@ import (
 func CORSMiddleware(rw http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
 	origins := strings.Join([]string{"*"}, ", ")
 	methods := strings.Join([]string{"GET", "POST"}, ", ")
-	headers := strings.Join([]string{"Accept", "Content-Type", "Content-Length", "Accept-Encoding", "Authorization"}, ", ")
+	headers := strings.Join([]string{"Accept", "Content-Type", "Content-Length", "Accept-Encoding", "Authorization", "X-Gontact-Token"}, ", ")
 
 	rw.Header().Set("Access-Control-Allow-Origin", origins)
 	rw.Header().Set("Access-Control-Allow-Methods", methods)
