@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+	"net/http"
 	"os"
 
 	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/codegangsta/negroni"
@@ -12,6 +14,9 @@ import (
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/contact", handlers.ContactHandler).Methods("POST")
+	router.HandleFunc("/", func(rw http.ResponseWriter, req *http.Request) {
+		log.Println("| Landing Hitted!")
+	}).Methods("GET")
 
 	//TODO: Middlewares add validation logic, could be with JWT or token authentication ?
 	n := negroni.Classic()
