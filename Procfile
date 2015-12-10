@@ -1,1 +1,1 @@
-web: wwco-contact
+web: gontact
