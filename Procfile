@@ -1,1 +1,1 @@
-web: github.com/wawandco/gontact
+web: gontact
