@@ -24,6 +24,15 @@ GOntact is secured by a environment variable `GONTACT_TOKEN` that should be pass
 GOntact built in providers:
 
 - Slack
+
+In order to activate this one please set GONTACT_PROVIDER=SLACK in your Environment.
+It uses the following Env variables:
+
+SLACK_WEBHOOK_URL (Required)
+SLACK_CHANNEL (optional default: "notifications")
+SLACK_USERNAME (optional default: "Gontact")
+SLACK_EMOJI (optional default: ":mailbox:")
+
 - Mandril
 - SendGrid (comming soon)
 - MailGun (comming soon)

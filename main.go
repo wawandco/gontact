@@ -6,6 +6,7 @@ import (
 	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/codegangsta/negroni"
 	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/gorilla/mux"
 	"github.com/wawandco/gontact/handlers"
+	"github.com/wawandco/gontact/middlewares"
 )
 
 func main() {
@@ -14,6 +15,7 @@ func main() {
 
 	//TODO: Middlewares add validation logic, could be with JWT or token authentication ?
 	n := negroni.Classic()
+	n.Use(negroni.HandlerFunc(middlewares.TokenMiddleware))
 	n.UseHandler(router)
 	n.Run(":" + serverPort())
 }
