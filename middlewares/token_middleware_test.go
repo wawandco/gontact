@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/stretchr/testify/assert"
 )
 
 func TestTokenBlank(t *testing.T) {
