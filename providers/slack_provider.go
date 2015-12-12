@@ -8,7 +8,7 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/core"
+	"github.com/wawandco/gontact/core"
 )
 
 //SlackProvider TODO: Document me!

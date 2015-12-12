@@ -4,8 +4,8 @@ import (
 	"errors"
 	"os"
 
-	m "github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/keighl/mandrill"
-	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/core"
+	m "github.com/wawandco/gontact/Godeps/_workspace/src/github.com/keighl/mandrill"
+	"github.com/wawandco/gontact/core"
 )
 
 //SlackProvider TODO: Document me!

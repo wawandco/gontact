@@ -4,10 +4,10 @@ import (
 	"net/http"
 	"os"
 
-	validator "github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/asaskevich/govalidator"
-	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/gorilla/schema"
-	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/core"
-	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/providers"
+	validator "github.com/wawandco/gontact/Godeps/_workspace/src/github.com/asaskevich/govalidator"
+	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/gorilla/schema"
+	"github.com/wawandco/gontact/core"
+	"github.com/wawandco/gontact/providers"
 )
 
 var registeredProviders = map[string]providers.Provider{

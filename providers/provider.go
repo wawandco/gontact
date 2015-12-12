@@ -1,6 +1,6 @@
 package providers
 
-import "github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/core"
+import "github.com/wawandco/gontact/core"
 
 //Provider is a interface build to set a baseline for implementations of different
 //transactional email providers.

@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/wawandco/Gontact",
+	"ImportPath": "github.com/wawandco/gontact",
 	"GoVersion": "go1.5.1",
 	"Packages": [
 		"./..."
@@ -44,22 +44,6 @@
 			"ImportPath": "github.com/stretchr/testify/assert",
 			"Comment": "v1.0-80-g67106a5",
 			"Rev": "67106a5111a06241c8d84952c33214675f51a34a"
-		},
-		{
-			"ImportPath": "github.com/wawandco/gontact/core",
-			"Rev": "bde85bb1e24dfc6f49d897945cb77e6d1b626f27"
-		},
-		{
-			"ImportPath": "github.com/wawandco/gontact/handlers",
-			"Rev": "bde85bb1e24dfc6f49d897945cb77e6d1b626f27"
-		},
-		{
-			"ImportPath": "github.com/wawandco/gontact/middlewares",
-			"Rev": "bde85bb1e24dfc6f49d897945cb77e6d1b626f27"
-		},
-		{
-			"ImportPath": "github.com/wawandco/gontact/providers",
-			"Rev": "bde85bb1e24dfc6f49d897945cb77e6d1b626f27"
 		}
 	]
 }

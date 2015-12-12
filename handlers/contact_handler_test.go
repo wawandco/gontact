@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/stretchr/testify/assert"
-	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/providers"
+	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/stretchr/testify/assert"
+	"github.com/wawandco/gontact/providers"
 )
 
 func TestContactValidationFailed(t *testing.T) {

@@ -3,7 +3,7 @@ package providers
 import (
 	"errors"
 
-	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/core"
+	"github.com/wawandco/gontact/core"
 )
 
 //InternalProvider is a provider written to be used on the testing.

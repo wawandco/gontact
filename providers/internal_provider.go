@@ -1,6 +1,6 @@
 package providers
 
-import "github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/core"
+import "github.com/wawandco/gontact/core"
 
 //InternalProvider is a provider written to be used on the testing.
 type InternalProvider struct{}
