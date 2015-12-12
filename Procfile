@@ -1,1 +1,1 @@
-web: gontact
+web: Gontact
