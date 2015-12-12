@@ -13,7 +13,7 @@ type MandrillProvider struct{}
 
 //SendContact is the implementation of the SendContact function for the Mandril Provider.
 func (sp MandrillProvider) SendContact(contact core.Contact) (string, error) {
-	mandrillKey := os.Getenv("GONTACT_MANDRIL_KEY")
+	mandrillKey := os.Getenv("MANDRILL_KEY")
 
 	if mandrillKey == "" {
 		return "", errors.New("Please define your mandril key.")
