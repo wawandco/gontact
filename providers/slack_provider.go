@@ -49,7 +49,12 @@ func (sp SlackProvider) SendContact(contact core.Contact) (string, error) {
 var slackMessageString = `Received a Website Contact \n *Name*: {{.Name}} \n *Email*: {{.Email}} \n *Message*: {{.Message}}`
 
 func buildSlackMessage(contact core.Contact) string {
-	messageTPL, _ := template.New("slack.message").Parse(slackMessageString)
+	message := buildMessage(contact, slackMessageString)
+	return message
+}
+
+func buildMessage(contact core.Contact, baseTPL string) string {
+	messageTPL, _ := template.New("slack.message").Parse(baseTPL)
 	var doc bytes.Buffer
 	messageTPL.Execute(&doc, contact)
 	message := doc.String()
