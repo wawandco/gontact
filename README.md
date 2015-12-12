@@ -33,15 +33,15 @@ It uses the following Env variables:
   - SLACK_USERNAME (optional default: "Gontact")
   - SLACK_EMOJI (optional default: "mailbox")
 
-#### Mandril
+#### Mandrill
 
-In order to activate this one please set `GONTACT_PROVIDER=MANDRIL` in your Environment.
+In order to activate this one please set `GONTACT_PROVIDER=MANDRILL` in your Environment.
 It uses the following Env variables:
 
-  - MADRIL_KEY (Required)
-  - MADRIL_TO (Required)
-  - MADRIL_FROM (Required)
-  - MANDRIL_SUBJECT (optional default: "Contact")
+  - MANDRILL_KEY (Required)
+  - MANDRILL_TO (Required)
+  - MANDRILL_FROM (Required)
+  - MANDRILL_SUBJECT (optional default: "Contact")
 
 #### SendGrid (comming soon)
 #### MailGun (comming soon)

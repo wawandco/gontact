@@ -14,6 +14,7 @@ var registeredProviders = map[string]providers.Provider{
 	"INTERNAL": providers.InternalProvider{},
 	"ERROR":    providers.ErrorProvider{},
 	"SLACK":    providers.SlackProvider{},
+	"MANDRILL": providers.MandrillProvider{},
 }
 
 //ContactHandler handles requests done to our /contact endpoint and pass our authentication method.

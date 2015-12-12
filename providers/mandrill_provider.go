@@ -9,23 +9,23 @@ import (
 )
 
 //SlackProvider TODO: Document me!
-type MandrilProvider struct{}
+type MandrillProvider struct{}
 
 //SendContact is the implementation of the SendContact function for the Mandril Provider.
-func (sp MandrilProvider) SendContact(contact core.Contact) (string, error) {
-	mandrilKey := os.Getenv("GONTACT_MANDRIL_KEY")
+func (sp MandrillProvider) SendContact(contact core.Contact) (string, error) {
+	mandrillKey := os.Getenv("GONTACT_MANDRIL_KEY")
 
-	if mandrilKey == "" {
+	if mandrillKey == "" {
 		return "", errors.New("Please define your mandril key.")
 	}
 
-	client := m.ClientWithKey(mandrilKey)
+	client := m.ClientWithKey(mandrillKey)
 	message := &m.Message{}
 
-	message.AddRecipient("bob@example.com", "Bob Johnson", "to")
-	message.FromEmail = osEnvWithDefault("MANDRIL_FROM", "gontact@wawand.co")
+	message.AddRecipient(os.Getenv("MANDRILL_TO"), "", "to")
+	message.FromEmail = osEnvWithDefault("MANDRILL_FROM", "gontact@wawand.co")
 	message.FromName = "Gontact Mailer"
-	message.Subject = osEnvWithDefault("MANDRIL_SUBJECT", "Contact")
+	message.Subject = osEnvWithDefault("MANDRILL_SUBJECT", "Contact")
 	message.HTML = buildMessage(contact, emailTPL)
 
 	_, err := client.MessagesSend(message)
