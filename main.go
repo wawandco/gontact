@@ -3,10 +3,10 @@ package main
 import (
 	"os"
 
-	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/codegangsta/negroni"
-	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/gorilla/mux"
-	"github.com/wawandco/gontact/handlers"
-	"github.com/wawandco/gontact/middlewares"
+	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/codegangsta/negroni"
+	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/gorilla/mux"
+	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/handlers"
+	"github.com/wawandco/Gontact/Godeps/_workspace/src/github.com/wawandco/gontact/middlewares"
 )
 
 func main() {
