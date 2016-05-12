@@ -4,7 +4,7 @@ import (
 	"errors"
 	"os"
 
-	m "github.com/keighl/mandrill"
+	sendgrid "github.com/sendgrid/sendgrid-go"
 	"github.com/wawandco/gontact/core"
 )
 
@@ -13,21 +13,20 @@ type SendgridProvider struct{}
 
 //SendContact is the implementation of the SendContact function for the Mandril Provider.
 func (sp SendgridProvider) SendContact(contact core.Contact) (string, error) {
-	mandrillKey := os.Getenv("SENDGRID_KEY")
+	sendgridKey := os.Getenv("SENDGRID_KEY")
 
-	if mandrillKey == "" {
-		return "", errors.New("Please define your mandril key.")
+	if sendgridKey == "" {
+		return "", errors.New("Please define your sendgrid key.")
 	}
 
-	client := m.ClientWithKey(mandrillKey)
-	message := &m.Message{}
+	sg := sendgrid.NewSendGridClientWithApiKey(sendgridKey)
 
-	message.AddRecipient(os.Getenv("MAIL_TO"), "", "to")
-	message.FromEmail = osEnvWithDefault("MAIL_FROM", "gontact@wawand.co")
-	message.FromName = "Gontact Mailer"
-	message.Subject = osEnvWithDefault("MAIL_SUBJECT", "Contact")
-	message.HTML = buildMessage(contact, emailTPL)
+	message := sendgrid.NewMail()
+	message.AddTo(os.Getenv("MAIL_TO"))
+	message.SetFrom(osEnvWithDefault("MAIL_FROM", "gontact@wawand.co"))
+	message.SetSubject(osEnvWithDefault("MAIL_SUBJECT", "Contact"))
+	message.SetHTML(buildMessage(contact, emailTPL))
+	err := sg.Send(message)
 
-	_, err := client.MessagesSend(message)
 	return "", err
 }

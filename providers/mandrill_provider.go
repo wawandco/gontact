@@ -22,10 +22,10 @@ func (sp MandrillProvider) SendContact(contact core.Contact) (string, error) {
 	client := m.ClientWithKey(mandrillKey)
 	message := &m.Message{}
 
-	message.AddRecipient(os.Getenv("MANDRILL_TO"), "", "to")
-	message.FromEmail = osEnvWithDefault("MANDRILL_FROM", "gontact@wawand.co")
+	message.AddRecipient(os.Getenv("MAIL_TO"), "", "to")
+	message.FromEmail = osEnvWithDefault("MAIL_FROM", "gontact@wawand.co")
 	message.FromName = "Gontact Mailer"
-	message.Subject = osEnvWithDefault("MANDRILL_SUBJECT", "Contact")
+	message.Subject = osEnvWithDefault("MAIL_SUBJECT", "Contact")
 	message.HTML = buildMessage(contact, emailTPL)
 
 	_, err := client.MessagesSend(message)
