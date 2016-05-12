@@ -4,7 +4,7 @@ import (
 	"errors"
 	"os"
 
-	m "github.com/wawandco/gontact/Godeps/_workspace/src/github.com/keighl/mandrill"
+	m "github.com/keighl/mandrill"
 	"github.com/wawandco/gontact/core"
 )
 

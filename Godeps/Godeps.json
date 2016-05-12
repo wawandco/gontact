@@ -4,46 +4,5 @@
 	"Packages": [
 		"./..."
 	],
-	"Deps": [
-		{
-			"ImportPath": "github.com/asaskevich/govalidator",
-			"Comment": "v2-39-g266f2b0",
-			"Rev": "266f2b090fb4deb9618b5779539872ecac650be2"
-		},
-		{
-			"ImportPath": "github.com/codegangsta/negroni",
-			"Comment": "v0.1-70-gc7477ad",
-			"Rev": "c7477ad8e330bef55bf1ebe300cf8aa67c492d1b"
-		},
-		{
-			"ImportPath": "github.com/davecgh/go-spew/spew",
-			"Rev": "5215b55f46b2b919f50a1df0eaa5886afe4e3b3d"
-		},
-		{
-			"ImportPath": "github.com/gorilla/context",
-			"Rev": "1c83b3eabd45b6d76072b66b746c20815fb2872d"
-		},
-		{
-			"ImportPath": "github.com/gorilla/mux",
-			"Rev": "48e889f422c9702f924e53b095546239a1253159"
-		},
-		{
-			"ImportPath": "github.com/gorilla/schema",
-			"Rev": "14c555599c2a4f493c1e13fd1ea6fdf721739028"
-		},
-		{
-			"ImportPath": "github.com/keighl/mandrill",
-			"Comment": "1.0.0-14-g5d7133f",
-			"Rev": "5d7133fb578a9504f8ab549737c993422f65a000"
-		},
-		{
-			"ImportPath": "github.com/pmezard/go-difflib/difflib",
-			"Rev": "d8ed2627bdf02c080bf22230dbb337003b7aba2d"
-		},
-		{
-			"ImportPath": "github.com/stretchr/testify/assert",
-			"Comment": "v1.0-80-g67106a5",
-			"Rev": "67106a5111a06241c8d84952c33214675f51a34a"
-		}
-	]
+	"Deps": []
 }

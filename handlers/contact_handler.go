@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"os"
 
-	validator "github.com/wawandco/gontact/Godeps/_workspace/src/github.com/asaskevich/govalidator"
-	"github.com/wawandco/gontact/Godeps/_workspace/src/github.com/gorilla/schema"
+	validator "github.com/asaskevich/govalidator"
+	"github.com/gorilla/schema"
 	"github.com/wawandco/gontact/core"
 	"github.com/wawandco/gontact/providers"
 )
@@ -15,6 +15,7 @@ var registeredProviders = map[string]providers.Provider{
 	"ERROR":    providers.ErrorProvider{},
 	"SLACK":    providers.SlackProvider{},
 	"MANDRILL": providers.MandrillProvider{},
+	"SENDGRID": providers.SendgridProvider{},
 }
 
 //ContactHandler handles requests done to our /contact endpoint and pass our authentication method.
